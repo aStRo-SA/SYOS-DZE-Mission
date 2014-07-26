@@ -124,7 +124,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	// hintsilent _typeOfCursorTarget;
 
 	_isVehicle = _cursorTarget isKindOf "AllVehicles";
-
+	_isVehicletype = _typeOfCursorTarget in ["ATV_US_EP1","ATV_CZ_EP1"];
+	_isnewstorage = _typeOfCursorTarget in DZE_isNewStorage;
+	
 	// get items && magazines only once
 	_magazinesPlayer = magazines player;
 
@@ -212,7 +214,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
     		player removeAction s_player_maintain_area_preview;
     		s_player_maintain_area_preview = -1;
 	 };
-	 
+
 	// CURSOR TARGET ALIVE
 	if(_isAlive) then {
 		
@@ -342,52 +344,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		{player removeAction _x} count s_player_lockunlock;s_player_lockunlock = [];
 		s_player_lockUnlock_crtl = -1;
 	};
-//--------------------------------------ARREST----------------------------------------------------------------
-    _side = side _cursorTarget == west; //so only Players can be detained
-    _arrestreq = "PartGeneric" in magazines player;    // CHANGE THIS TO THE ITEM YOU WANT PLAYERS TO NEED TO BE ABLE TO ARREST
-	_arresthumanity = player getVariable ["humanity",0];
-    if (player getVariable "Detain" == 1) then {
-    player removeAction s_player_arrest;
-    };
-        if(_isMan && !_isZombie && (_arresthumanity >= 5000) or (_arresthumanity <= -5000)  && _canDo && _isAlive && !_isAnimal && _arrestreq && _side) then {
-        if (_cursorTarget getVariable "Detain" == 1) exitWith {};
-            if (s_player_arrest < 0) then {
-                s_player_arrest = player addaction [("<t color=""#0074E8"">" + ("Detain") +"</t>"), "arrest\Detain.sqf",_cursorTarget,100,false,true,"", ""];
-                };
-        } else {
-            player removeAction s_player_arrest;
-            s_player_arrest = -1;
-            };
-    if ((_cursorTarget getVariable "Detain" == 1) && cursorTarget distance player < 2 ) then
-    {
-        if(_isMan && !_isZombie && _canDo && _isAlive &&(_cursorTarget getVariable "Escort" == 0)) then {
-            if (s_player_escort < 0) then {
-                s_player_escort = player addaction [("<t color=""#0074E8"">" + ("Escort") +"</t>"), "arrest\Escort.sqf",_cursorTarget, 1, true, true, "", ""];
-                };
-        } else {
-            player removeAction s_player_escort;
-            s_player_escort = -1;
-            };
-        if(_isMan && !_isZombie && _canDo && _isAlive) then {
-            if (s_player_search < 0) then {
-                s_player_search = player addaction [("<t color=""#0074E8"">" + ("Search") +"</t>"), "arrest\Search.sqf",_cursorTarget, 1, true, true, "", ""];
-                };
-        } else {
-            player removeAction s_player_search;
-            s_player_search = -1;
-            };
 
-        if(_isMan && !_isZombie && _canDo && _isAlive) then {
-            if (s_player_release < 0) then {
-                s_player_release = player addaction [("<t color=""#0074E8"">" + ("Release") +"</t>"), "arrest\release.sqf",_cursorTarget, 1, true, true, "", ""];
-                };
-        } else {
-            player removeAction s_player_release;
-            s_player_release = -1;
-            };
-    };
-    //-------------------------------------------------------------------------------------------------------------
-	
 	if(DZE_AllowForceSave) then {
 		//Allow player to force save
 		if((_isVehicle || _isTent) && !_isMan) then {
@@ -920,16 +877,6 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	player removeAction s_player_SurrenderedGear;
 	s_player_SurrenderedGear = -1;
 
-	//Arrest
-    player removeAction s_player_arrest;
-    s_player_arrest = -1;
-    player removeAction s_player_release;
-    s_player_release = -1;
-    player removeAction s_player_escort;
-    s_player_escort = -1;
-    player removeAction s_player_search;
-    s_player_search = -1;
-	
 	//Others
 	player removeAction s_player_forceSave;
 	s_player_forceSave = -1;
