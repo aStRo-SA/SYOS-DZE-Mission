@@ -14,3 +14,13 @@ if(isServer) then {
 // </Astro Evac Chopper
 dayz_allowedObjects = dayz_allowedObjects + ["HeliHRescue"];
 // /> Evac Chopper
+
+//Safezone list
+safezones = [
+    [[12061.648,12636.292],100,"Air"],
+    [[1606.6443,7803.5156],100,"Bandit"],
+    [[4063.4226,11664.19],100,"Bash"],
+    [[12944.227,12766.889],100,"Hero"],
+    [[11447.472,11364.504],100,"Klen"],
+    [[6315.88,7791.3],100,"Stary"]
+];
