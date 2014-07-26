@@ -19,7 +19,7 @@ _infiSZ =
         [[11447.472,11364.504],200,true],
         [[1606.6443,7803.5156],150,true],
         [[12944.227,12766.889],150,true],
-        [[5068.6636,9723.4248],100,true],
+        // [[5068.6636,9723.4248],100,true], Unknown Safe Zone
 		[[12060.471,12638.533],100,true] //Shaun Riley - Added Aircraft Dealer
 ];
 if (isServer) exitWith
