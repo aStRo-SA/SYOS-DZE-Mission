@@ -132,7 +132,6 @@ R3F_LOG_CFG_objets_remorquables = R3F_LOG_CFG_objets_remorquables +
 "ArmoredSUV_PMC_DZ",
 "ATV_CZ_EP1",
 "ATV_US_EP1",
-"C130J_US_EP1",
 "car_hatchback",
 "car_sedan",
 "CSJ_GyroC",
