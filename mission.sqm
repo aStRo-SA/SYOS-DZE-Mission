@@ -1178,7 +1178,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=17;
+		items=19;
 		class Item0
 		{
 			position[]={7839.6055,381.33774,8414.7324};
@@ -1300,6 +1300,25 @@ class Mission
 			text="Hero Camp";
 			type="mil_dot";
 			colorName="ColorBlue";
+		};
+			class Item17
+		{
+			position[]={13583.978, -38.601055, 2979.428};
+			name="Restricted0";
+			text="AI Military Emplacement";
+			markerType="ELLIPSE";
+			type="empty";
+			colorName="ColorRedFaded50";
+			a=750; //same as sensors Radius
+			b=600; //same as sensors Radius
+		};
+			class Item18
+		{
+			position[]={13583.978, -38.601055, 2979.428};
+			name="AI_Base";
+			text="AI Military Intsallation";
+			type="mil_dot";
+			colorName="ColorRed";
 		};
 	};
 	class Sensors
