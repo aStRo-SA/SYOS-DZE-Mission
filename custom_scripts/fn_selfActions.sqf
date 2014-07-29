@@ -349,7 +349,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
     if (player getVariable "Detain" == 1) then {
     player removeAction s_player_arrest;
     };
-        if(_isMan && !_isZombie && _canDo && _isAlive && !_isAnimal && _arrestreq && !(_traderType in serverTraders) && _side && (_arresthumanity >= 5000) or _isMan && !_isZombie && _canDo && _isAlive && !_isAnimal && _arrestreq && !(_traderType in serverTraders) && _side && (_arresthumanity <= -5000)) then {
+        if(_isMan && !inSafeZone && !_isZombie && _canDo && _isAlive && !_isAnimal && _arrestreq && !(_traderType in serverTraders) && _side && (_arresthumanity >= 5000) or _isMan && !inSafeZone && !_isZombie && _canDo && _isAlive && !_isAnimal && _arrestreq && !(_traderType in serverTraders) && _side && (_arresthumanity <= -5000)) then {
         if (_cursorTarget getVariable "Detain" == 1) exitWith {};
             if (s_player_arrest < 0) then {
                 s_player_arrest = player addaction [("<t color=""#0074E8"">" + ("Detain") +"</t>"), "arrest\Detain.sqf",_cursorTarget,100,false,true,"", ""];
