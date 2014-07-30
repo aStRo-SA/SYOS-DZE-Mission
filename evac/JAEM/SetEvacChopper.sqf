@@ -6,8 +6,14 @@
 /* Last update: 06/14/2014            */
 /*------------------------------------*/
 
+//Shaun Riley edit
+_playerUID = getPlayerUIDOld player;
+// Original
+//private ["_allNearRescueFields","_locationPlayer","_cnt","_objectID","_objectUID","_targetVehicle","_playerUID","_magazinesPlayer","_hasBriefcase","_location","_dir","_object"];
 
-private ["_allNearRescueFields","_locationPlayer","_cnt","_objectID","_objectUID","_targetVehicle","_playerUID","_magazinesPlayer","_hasBriefcase","_location","_dir","_object"];
+
+private ["_allNearRescueFields","_locationPlayer","_cnt","_objectID","_objectUID","_targetVehicle","_magazinesPlayer","_hasBriefcase","_location","_dir","_object"];
+
 
 //This prevents the building of Evac-Chopper field on trader signs
 _allNearRescueFields = (nearestObjects [player,["HeliHRescue"],50]);
