@@ -53,6 +53,18 @@ class RscPicture
 	lineSpacing=0;
 	text="";
 };
+
+//Shaun Riley - Sirens
+class CfgSounds
+{
+    sounds[] = {siren};
+    class siren
+    {
+	name = "siren";
+	sound[] = {custom_mods\sirens\siren.ogg,0.5,1};
+	titles[] = {};
+    };
+};
 class RscLoadingText : RscText
 {
 	style = 2;
@@ -187,6 +199,6 @@ class RscTitles {
 };
 
 //astro include snapping pro files
-#include "snapping\snap_pro\snappoints.hpp" 
+#include "custom_mods\snapping\snap_pro\snappoints.hpp" 
 //Shaun Riley - EVD
 #include "custom_scripts\extra_rc.hpp"

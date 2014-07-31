@@ -171,7 +171,7 @@ while{true} do {
 								evacFunctions = true;
 							
 								if (s_player_makeEvacChopper < 0) then {
-									s_player_makeEvacChopper = player addAction [("<t color=""#0000FF"">" + ("Set Evac-Chopper") + "</t>"),"evac\JAEM\SetEvacChopper.sqf",evac_cTarget,-1000,false,false,"",""];
+									s_player_makeEvacChopper = player addAction [("<t color=""#0000FF"">" + ("Set Evac-Chopper") + "</t>"),"custom_mods\evac\JAEM\SetEvacChopper.sqf",evac_cTarget,-1000,false,false,"",""];
 								};
 					
 								if (playerHasEvacField) then {
@@ -179,7 +179,7 @@ while{true} do {
 									if ((evac_cTarget distance playersEvacField) <= 10) then {
 							
 										if (s_player_clearEvacChopper < 0) then {
-											s_player_clearEvacChopper = player addAction [("<t color=""#0000FF"">" + ("Clear Evac-Chopper") + "</t>"),"evac\JAEM\ClearEvacChopper.sqf",evac_cTarget,-1001,false,false,"",""];
+											s_player_clearEvacChopper = player addAction [("<t color=""#0000FF"">" + ("Clear Evac-Chopper") + "</t>"),"custom_mods\evac\JAEM\ClearEvacChopper.sqf",evac_cTarget,-1001,false,false,"",""];
 										};
 								
 									} else {
@@ -271,7 +271,7 @@ while{true} do {
 									evac_callFunctions = true;
 									
 									if (s_player_evacCall < 0) then {
-										s_player_evacCall = player addAction [("<t color=""#0000FF"">" + ("Call Evac-Chopper") + "</t>"),"evac\JAEM\CallEvacChopper.sqf",[],-1000,false,false,"",""];
+										s_player_evacCall = player addAction [("<t color=""#0000FF"">" + ("Call Evac-Chopper") + "</t>"),"custom_mods\evac\JAEM\CallEvacChopper.sqf",[],-1000,false,false,"",""];
 									};
 								
 								} else {
@@ -284,7 +284,7 @@ while{true} do {
 								evac_callFunctions = true;
 								
 								if (s_player_evacCall < 0) then {
-									s_player_evacCall = player addAction [("<t color=""#0000FF"">" + ("Call Evac-Chopper") + "</t>"),"evac\JAEM\CallEvacChopper.sqf",[],-1000,false,false,"",""];
+									s_player_evacCall = player addAction [("<t color=""#0000FF"">" + ("Call Evac-Chopper") + "</t>"),"custom_mods\evac\JAEM\CallEvacChopper.sqf",[],-1000,false,false,"",""];
 								};
 							};
 						

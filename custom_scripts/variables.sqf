@@ -10,11 +10,6 @@ if(isServer) then {
 };
 // /> (EVD)
 
-// Shaun Riley - Evac Chopper
-// </Astro Evac Chopper
-dayz_allowedObjects = dayz_allowedObjects + ["HeliHRescue"];
-// /> Evac Chopper
-
 //Safezone list
 safezones = [
     [[12061.648,12636.292],100,"Air"],
@@ -24,3 +19,7 @@ safezones = [
     [[11447.472,11364.504],100,"Klen"],
     [[6315.88,7791.3],100,"Stary"]
 ];
+
+// Shaun Riley - Evac Chopper
+// </Astro Evac Chopper
+dayz_allowedObjects = dayz_allowedObjects + ["HeliHRescue"];

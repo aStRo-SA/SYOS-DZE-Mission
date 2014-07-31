@@ -11,7 +11,7 @@ player forceWalk true;
 
 // Attaching to player for escort
 _newCiv attachto [player,[-0.2, 0.7, 0]];
-act4 = player addaction ['<t color="#00ff00">' + "Stop Escorting" + '</t>', "arrest\stop_escort.sqf",_newCiv, 1, true, true, "", ""]; // Adds action to re-detain.
+act4 = player addaction ['<t color="#00ff00">' + "Stop Escorting" + '</t>', "custom_mods\arrest\stop_escort.sqf",_newCiv, 1, true, true, "", ""]; // Adds action to re-detain.
 while { (_newCiv getVariable "Escort" == 1) } do {
 	if (vehicle player != player) then {
 		detach _newCiv;

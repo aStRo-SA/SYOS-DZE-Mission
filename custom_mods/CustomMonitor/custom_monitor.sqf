@@ -58,7 +58,7 @@ fnc_debug = {
         <t size='1.0' font='Bitstream' align='left' color='#B5DAFF' >FPS: </t><t size='1.0' font='Bitstream' align='right' color='#B5DAFF' >%10</t><br/>
         <t size='1.0' font='Bitstream' align='left' color='#B5DAFF' >Restart every 3 Hours </t><br/><br/>
 		<t size='1.0' font='Bitstream' align='center' color='#B5DAFF' >www.syos.co.za </t><br/><br/>
-		<t size='0.9'font='Bitstream'align='center' color='#298DEF' >ts: 197.242.148.180:9987</t><br/>
+		<t size='0.9'font='Bitstream'align='center' color='#298DEF' >'ts: 197.242.148.180:9987'</t><br/>
  
         ",dayz_playerName,r_player_blood,round _humanity,_killsH,_killsB,_kills,_headShots,count entities "zZombie_Base",{alive _x} count entities "zZombie_Base",round diag_fps,_banditCount,_heroCount,_pic,(dayz_Survived),_weaponname,_textCity];
     sleep 1;

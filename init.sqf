@@ -56,7 +56,7 @@ dayz_fullMoonNights = true;
 
 //astro Custom Loadout
 DefaultMagazines = ["ItemBandage","ItemBandage","17Rnd_9x19_glock17","17Rnd_9x19_glock17","ItemMorphine","ItemPainkiller","ItemWaterbottleBoiled","FoodSteakCooked","15Rnd_W1866_Slug"];
-DefaultWeapons = ["Winchester1866","glock17_EP1","ItemFlashlight","ItemHatchet","ItemMap"];
+DefaultWeapons = ["ItemFlashlight","ItemHatchet","ItemMap"];
 DefaultBackpack = "DZ_Patrol_Pack_EP1";
 DefaultBackpackWeapon = "";
 //astro Custom Loadout
@@ -76,7 +76,6 @@ dayz_paraSpawn = true;
 //Load in compiled functions
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
 call compile preprocessFileLineNumbers "custom_scripts\variables.sqf";							//Shaun Riley - Call Custom Variables
-call compile preprocessFileLineNumbers "crafting\variables.sqf";								//astro crafting limits
 progressLoadingScreen 0.1;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
 progressLoadingScreen 0.2;
@@ -84,7 +83,6 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functi
 progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
 call compile preprocessFileLineNumbers "custom_scripts\compiles.sqf";							//Shaun Riley - Call Custom Compiles
-call compile preprocessFileLineNumbers "snapping\compiles.sqf";							 //Compile custom compiles snapping
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";								//Compile trader configs
 //progressloadingScreen 0.7	
@@ -113,7 +111,7 @@ if (!isDedicated) then {
 	_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
 	
 	//safezone
-	[] execVM "safezones\safezone.sqf"; 
+	[] execVM "custom_mods\safezones\safezone.sqf"; 
 	
 	//anti Hack 
 	//[] execVM "\z\addons\dayz_code\system\antihack.sqf";
@@ -122,30 +120,28 @@ if (!isDedicated) then {
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 	
 	//astro evac
-	_nil = [] execVM "evac\JAEM\EvacChopper_init.sqf";
+	_nil = [] execVM "custom_mods\evac\JAEM\EvacChopper_init.sqf";
 	//astro evac
 };
 
 //astro credits
-	[] execVM "WelcomeCredits\Server_WelcomeCredits.sqf";
+	[] execVM "custom_mods\WelcomeCredits\Server_WelcomeCredits.sqf";
 //astro credits
 	
 //Login screen
-    [] execVM "WelcomeCredits\loginCamera.sqf";
+    [] execVM "custom_mods\WelcomeCredits\loginCamera.sqf";
 //Login screen
 
 //astro Watermark
 	server_name = "SYOS"; 
 //astro Watermark
 
-
-
 //astro Servicepoint
-	execVM "ServicePoint\service_point.sqf";
+	execVM "custom_mods\ServicePoint\service_point.sqf";
 //astro Servicepoint
 
 //astro Tow and lift
-	execVM "R3F_ARTY_AND_LOG\init.sqf";
+//	execVM "R3F_ARTY_AND_LOG\init.sqf";
 //astro Tow and lift
 
 //astro KillMessages
@@ -157,7 +153,7 @@ if (!isDedicated) then {
 //astro KillMessages
 
 //astro custom monitor
-	[] execVM "CustomMonitor\custom_monitor.sqf";
+	[] execVM "custom_mods\CustomMonitor\custom_monitor.sqf";
 //astro custom monitor
 
 
@@ -176,4 +172,4 @@ execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
-_nul = [] execVM "arrest\detaincheck.sqf";
+_nul = [] execVM "custom_mods\arrest\detaincheck.sqf";

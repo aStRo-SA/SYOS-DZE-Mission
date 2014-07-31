@@ -23,6 +23,22 @@ if (!isNull _nearLight) then {
 	};
 };
 
+//Shaun Riley - Sirens
+_isCopcar = typeOf _vehicle in ["AH6J_EP1","policecar"];
+
+if (_inVehicle and _isCopcar and (driver _vehicle == player)) then {
+        dayz_addsirens = _vehicle;
+    if (s_player_sirens_on < 0) then {
+        s_player_sirens_on = dayz_addsirens addAction ["Sirens on","custom_mods\sirens\sirens_on.sqf",dayz_addsirens,2,false,true,"",""];
+        s_player_sirens_off = dayz_addsirens addAction ["Sirens off","custom_mods\sirens\sirens_off.sqf",dayz_addsirens,2,false,true,"",""];
+        };
+    } else {
+        dayz_addsirens removeAction s_player_sirens_on;
+        dayz_addsirens removeAction s_player_sirens_off;
+        s_player_sirens_on = -1;
+        s_player_sirens_off = -1;
+    };
+
 //Grab Flare
 if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	if (s_player_grabflare < 0) then {
@@ -352,7 +368,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
         if(_isMan && !inSafeZone && !_isZombie && _canDo && _isAlive && !_isAnimal && _arrestreq && !(_traderType in serverTraders) && _side && (_arresthumanity >= 5000) or _isMan && !inSafeZone && !_isZombie && _canDo && _isAlive && !_isAnimal && _arrestreq && !(_traderType in serverTraders) && _side && (_arresthumanity <= -5000)) then {
         if (_cursorTarget getVariable "Detain" == 1) exitWith {};
             if (s_player_arrest < 0) then {
-                s_player_arrest = player addaction [("<t color=""#0074E8"">" + ("Detain") +"</t>"), "arrest\Detain.sqf",_cursorTarget,100,false,true,"", ""];
+                s_player_arrest = player addaction [("<t color=""#0074E8"">" + ("Detain") +"</t>"), "custom_mods\arrest\Detain.sqf",_cursorTarget,100,false,true,"", ""];
                 };
         } else {
             player removeAction s_player_arrest;
@@ -362,7 +378,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
     {
         if(_isMan && !_isZombie && _canDo && _isAlive &&(_cursorTarget getVariable "Escort" == 0)) then {
             if (s_player_escort < 0) then {
-                s_player_escort = player addaction [("<t color=""#0074E8"">" + ("Escort") +"</t>"), "arrest\Escort.sqf",_cursorTarget, 1, true, true, "", ""];
+                s_player_escort = player addaction [("<t color=""#0074E8"">" + ("Escort") +"</t>"), "custom_mods\arrest\Escort.sqf",_cursorTarget, 1, true, true, "", ""];
                 };
         } else {
             player removeAction s_player_escort;
@@ -370,7 +386,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
             };
         if(_isMan && !_isZombie && _canDo && _isAlive) then {
             if (s_player_search < 0) then {
-                s_player_search = player addaction [("<t color=""#0074E8"">" + ("Search") +"</t>"), "arrest\Search.sqf",_cursorTarget, 1, true, true, "", ""];
+                s_player_search = player addaction [("<t color=""#0074E8"">" + ("Search") +"</t>"), "custom_mods\arrest\Search.sqf",_cursorTarget, 1, true, true, "", ""];
                 };
         } else {
             player removeAction s_player_search;
@@ -379,7 +395,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 
         if(_isMan && !_isZombie && _canDo && _isAlive &&(_cursorTarget getVariable "Escort" == 0)) then {
             if (s_player_release < 0) then {
-                s_player_release = player addaction [("<t color=""#0074E8"">" + ("Release") +"</t>"), "arrest\release.sqf",_cursorTarget, 1, true, true, "", ""];
+                s_player_release = player addaction [("<t color=""#0074E8"">" + ("Release") +"</t>"), "custom_mods\arrest\release.sqf",_cursorTarget, 1, true, true, "", ""];
                 };
         } else {
             player removeAction s_player_release;
@@ -785,7 +801,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		//Pack Vehicles
 	if (_typeOfCursorTarget in EVDVehicleArray and _hasToolbox and !(locked _cursorTarget) and (damage _cursorTarget < 1)) then {
 		if (s_player_packvehicle < 0) then {
-			s_player_packvehicle = player addAction ["Pack Vehicle", "evd\EVD_pack.sqf",_cursorTarget, 0, false, true, "",""];
+			s_player_packvehicle = player addAction ["Pack Vehicle", "custom_mods\evd\EVD_pack.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_packvehicle;

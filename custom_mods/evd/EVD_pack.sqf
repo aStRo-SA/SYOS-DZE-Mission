@@ -2,7 +2,7 @@
 	Enhanced Vehicle Deployment by TheFarix
 */
 
-call compile preprocessFileLineNumbers "evd\EVD_common.sqf";
+call compile preprocessFileLineNumbers "custom_mods\evd\EVD_common.sqf";
 
 if (dayz_combat == 1) exitwith { cutText ["\n\nYou are in combat and cannot perform that action!", "PLAIN DOWN"] };
 
