@@ -56,7 +56,7 @@ dayz_fullMoonNights = true;
 
 //astro Custom Loadout
 DefaultMagazines = ["ItemBandage","ItemBandage","17Rnd_9x19_glock17","17Rnd_9x19_glock17","ItemMorphine","ItemPainkiller","ItemWaterbottleBoiled","FoodSteakCooked","15Rnd_W1866_Slug"];
-DefaultWeapons = ["ItemFlashlight","ItemHatchet","ItemMap"];
+DefaultWeapons = ["Winchester1866","glock17_EP1","ItemFlashlight","ItemHatchet","ItemMap"];
 DefaultBackpack = "DZ_Patrol_Pack_EP1";
 DefaultBackpackWeapon = "";
 //astro Custom Loadout
