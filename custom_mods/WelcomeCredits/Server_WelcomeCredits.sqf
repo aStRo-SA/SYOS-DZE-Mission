@@ -45,9 +45,9 @@ _role1names = ["SYOS ZA EPOCH SERVER"];
 _role2 = "Website";
 _role2names = ["http://www.syos.co.za"];
 _role3 = "TeamSpeak";
-_role3names = ["197.242.148.180:9987"];
+_role3names = ["197.189.241.204"];
 _role4 = "Server Features";
-_role4names = ["Custom Buildings", "Self-Blood Bag", "Service Stations", "Trader Safezones", "AI Missions", "Heli Evac", "Side Missions", "...and more!"];
+_role4names = ["Custom Buildings", "Self-Blood Bag", "Service Stations", "Trader Safezones", "AI Missions", "Heli Evac", "Arrest and Detain", "Side Missions", "...and more!"];
 _role5 = "Server Admin";
 _role5names = ["aStRo", "Demon", "Kimbers", "Jake", "any problems feel free to ask"];
 

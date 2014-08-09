@@ -1,0 +1,2 @@
+
+AllowToJumpOnMeters = 20;

@@ -51,7 +51,7 @@ DynamicVehicleDamageHigh = 100; // Default: 100
 
 DZE_BuildOnRoads = false; // Default: False
 
-EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
+EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"],["any","any","any","any",10,"Military"], ["any","any","any","any",25,"Treasure"], ["any","any","any","any",40,"Supplyitems"], ["any","any","any","any",55,"Construction"],];
 dayz_fullMoonNights = true;
 
 //astro Custom Loadout
@@ -153,7 +153,7 @@ if (!isDedicated) then {
 //astro KillMessages
 
 //astro custom monitor
-	[] execVM "custom_mods\CustomMonitor\custom_monitor.sqf";
+//	[] execVM "custom_mods\CustomMonitor\custom_monitor.sqf";
 //astro custom monitor
 
 
@@ -172,4 +172,9 @@ execVM "\z\addons\dayz_code\external\DynamicWeatherEffects.sqf";
 
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
 
+[] execVM "baseJump\init.sqf";
+
 _nul = [] execVM "custom_mods\arrest\detaincheck.sqf";
+
+//Time Cycle
+[6,true,10,1,true,10] execFSM "custom_scripts\core_time.fsm";
